@@ -4,8 +4,8 @@ using namespace std;
 
 void interDirDer(int [], int);
 void interDirIz(int [], int);
-//void interDirCen(int, int);
-//void interDirBi(int, int);
+void interDirCen(int [], int);
+//void interDirBi(int [], int);
 
 int main(){
 	int m,n;
@@ -39,18 +39,17 @@ int main(){
 			break;
 		
 		case 3:
-		//	interDirCen(arr, m);
+			interDirCen(arr, m);
 			break;
 			
 		case 4:
-		//	interDirBi(arr, m);
+			//interDirBi(arr, m);
 			break;
 			
 		default:
 			cout << "Numero incorrecto..." << endl;
 			
 	}
-	
 	
 	return 0;
 }
@@ -92,6 +91,34 @@ void interDirIz(int arr[], int m){
 		cout << arr[i] << " ";
 	}
 }
-//void interDirCen(int, int);
-//void interDirBi(int, int);
+
+void interDirCen(int arr[], int m ){
+	int aux;
+	bool sen;
+	
+	for ( int i = 0; i<m-1; i++ ){
+		sen = false;
+		
+		for (int j=0; j<m-i-1; j++){
+			if (arr[j] > arr[j+1]){
+				
+				aux = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1] = aux;
+				sen = true;
+			}
+		}
+		
+		if (!sen){
+			break;
+		}
+	}
+	
+	for ( int i = 0; i<m; i++){
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+
+//void interDirBi(int arr[], int m )
 
