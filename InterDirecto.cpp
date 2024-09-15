@@ -1,11 +1,10 @@
 #include <iostream>
 using namespace std;
 
-
 void interDirDer(int [], int);
 void interDirIz(int [], int);
 void interDirCen(int [], int);
-//void interDirBi(int [], int);
+void interDirBi(int [], int);
 
 int main(){
 	int m,n;
@@ -43,7 +42,7 @@ int main(){
 			break;
 			
 		case 4:
-			//interDirBi(arr, m);
+			interDirBi(arr, m);
 			break;
 			
 		default:
@@ -120,5 +119,50 @@ void interDirCen(int arr[], int m ){
 	cout << endl;
 }
 
-//void interDirBi(int arr[], int m )
+void interDirBi(int arr[], int m ){
+	int aux;
+	int com =0;
+	int ter = m-1;
+	bool sen=true;
+	
+	cout << "El arreglo ordenado es: " << endl;
+	
+	while(sen){
+		sen = false;
+		
+		for ( int i = com; i<ter; i++){
+			if (arr[i] > arr[i+1]){
+				aux = arr[i];
+				arr[i] = arr[i+1];
+				arr[i+1] = aux;
+				sen = true;
+				
+			}
+		}
+		
+		if (!sen)
+			break;
+			
+		ter--;
+		com = false;
+		
+		for (int i = ter; i>com; i--){
+			if (arr[i]<arr[i-1]){
+				aux = arr[i];
+				arr[i] = arr[i-1];
+				arr[i-1] = aux;
+				sen=true;
+				
+			}
+		}
+		
+		com++;
+	}
+	
+	//Mostrando ordenamiento
+	for(int i = 0; i<m; i++){
+		cout << arr[i] << " ";
+		
+	}
+}
 
