@@ -23,7 +23,7 @@ int main(){
 	cout << "1. Ordenacion por intercambio directo por la derecha. " << endl;
 	cout << "2. Ordenacion por intercambio directo por la izquierda. " << endl;
 	cout << "3. Ordenacion por intercambio directo con senial. " << endl;
-	cout << "4. Ordenacion por intercamnio directo bidireccional. " << endl;
+	cout << "4. Ordenacion por intercambio directo bidireccional. " << endl;
 	cout << "Opcion " << endl;
 	cin >> n;
 	
@@ -58,11 +58,11 @@ void interDirDer(int arr[], int m ){
 	cout << "El arreglo ordenado es: " << endl;
 	
 	for (int i = 0; i<m-1; i++){
-		for ( int j = 0; j<m-i; j++){
-			if (arr[j] > arr[j+1]){
-				aux = arr[j];
-				arr[j] = arr[j+1];
-				arr[j+1] = aux;
+		for ( int j = i+1; j<m; j++){
+			if (arr[i] > arr[j]){
+				aux = arr[i];
+				arr[i] = arr[j];
+				arr[j] = aux;
 			}
 		}
 	}
