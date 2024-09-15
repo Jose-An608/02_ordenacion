@@ -3,7 +3,7 @@ using namespace std;
 
 
 void interDirDer(int [], int);
-//void interDirIz(int, int);
+void interDirIz(int [], int);
 //void interDirCen(int, int);
 //void interDirBi(int, int);
 
@@ -35,7 +35,7 @@ int main(){
 			break;
 		
 		case 2:
-		//	interDireIz(arr, m);
+			interDirIz(arr, m);
 			break;
 		
 		case 3:
@@ -57,7 +57,7 @@ int main(){
 
 void interDirDer(int arr[], int m ){
 	int aux;
-	cout << "El arreglo ordenador es: " << endl;
+	cout << "El arreglo ordenado es: " << endl;
 	
 	for (int i = 0; i<m-1; i++){
 		for ( int j = 0; j<m-i; j++){
@@ -73,7 +73,25 @@ void interDirDer(int arr[], int m ){
 		cout << arr[i] << " ";
 	}
 }
-//void interDirIz(int, int);
+
+void interDirIz(int arr[], int m){
+	int aux;
+	cout << "El arreglo ordenado es: " << endl;
+	
+	for (int i = 0; i<m-1; i++){
+		for ( int j = m-1; j>i; j--){
+			if (arr[j] < arr[j-1]){
+				aux = arr[j];
+				arr[j] = arr[j-1];
+				arr[j-1] = aux;
+			}
+		}
+	}
+	
+	for ( int i = 0; i<m; i++){
+		cout << arr[i] << " ";
+	}
+}
 //void interDirCen(int, int);
 //void interDirBi(int, int);
 
